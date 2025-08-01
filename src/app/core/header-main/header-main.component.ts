@@ -10,9 +10,9 @@ export class HeaderMainComponent implements OnInit {
 
   changeLanguage(lang: string): void {
     this.currentLang = lang;
-    // هون لاحقًا فيك تستخدمي خدمة ترجمة (ngx-translate)
+    
     console.log('Language switched to:', lang);
-    // مثال: window.location.href = '/en' أو reload app
+    
   }
   constructor() { }
 
