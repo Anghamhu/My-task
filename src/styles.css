@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+body,
+html {
+  font-family: 'Cairo', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Cairo', sans-serif ;
+}
+
+
+
+
+/* تنسيق قسم محتوى قائمة القوالب كلاس ال mat-menu */
+.custom-menu-panel {
+  max-width:900px !important;
+  height: 376px;
+  overflow: hidden !important;
+  background-color: #fff;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  transform: none !important;
+  padding: 10px 20px;
+}

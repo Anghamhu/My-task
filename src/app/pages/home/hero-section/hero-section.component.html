@@ -1,0 +1,49 @@
+<div class="hero-section">
+    <h1 class="title">ابدأ بتصميم مميز لعمل مميز</h1>
+    <p class="subtitle">اجلب الحياة لـ <span
+            style="background-color: black; color: #fff; padding:0px 2px; border-radius: 5px;">{{ rotatingWord }}</span>
+    </p>
+    <!-- قيم ثابتة بشريط البحث   -->
+    <!-- <div class="search-container">
+    <mat-form-field appearance="fill" class="search-box">
+      <mat-label>ابحث عن أفضل تصميم هنا...</mat-label>
+      <input matInput [(ngModel)]="searchText" (input)="onSearchChange()">
+      <button mat-icon-button matPrefix disabled>
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-select [(value)]="selectedCategory" class="category-select">
+        <mat-option value="all">الكل</mat-option>
+        <mat-option value="cv">انفوجرافيك</mat-option>
+        <mat-option value="logo">النماذج</mat-option>
+        <mat-option value="social_media">الشرائح</mat-option>
+         <mat-option value="social_media">تواصل اجتماعي</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <button mat-icon-button class="search-icon">
+                <mat-icon>search</mat-icon>
+            </button>
+
+            <input matInput placeholder="ابحث عن أفضل تصميم هنا..." [(ngModel)]="searchText"
+                (input)="onSearchChange()" />
+
+            <button mat-button [matMenuTriggerFor]="categoryMenu" class="category-button">
+                <mat-icon>arrow_drop_down</mat-icon> الكل{{ selectedCategoryLabel }}
+            </button>
+            
+            <mat-menu #categoryMenu="matMenu">
+                <button mat-menu-item *ngFor="let category of categories" (click)="selectCategory(category)">
+                    {{ category.label }}
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+
+
+    <mat-chip-list class="chip-list">
+        <mat-chip class="tag-chip" *ngFor="let tag of tags" selected>{{tag}}</mat-chip>
+    </mat-chip-list>
+</div>

@@ -1,0 +1,218 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #a4d3ff;
+  padding: 40px 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.mat-button.active {
+  background-color: #fff;
+  padding: 2px 10px;
+}
+
+.login-button{
+  background-color: #007bff;
+  color: #fff;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.toolbar-actions .lang {
+  border: 1px solid #8c8c8c;
+  color: #8c8c8c;
+}
+
+/* تنسيقات قائمة محتوى القوالب */
+.content-mat-menu-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 100% !important;
+}
+
+.item-menu-panel {
+  width: 160px;
+  max-height: 328px;
+  text-align: right;
+  direction: rtl;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+.item-menu-panel img {
+  width: 100%;
+  height: 96px;
+  border-radius: 5px;
+}
+
+.title-mat-menu-panel {
+  margin-top: 0px;
+}
+
+.list-item-menu-panel {
+  list-style: none;
+  text-align: right;
+  padding: 0px;
+}
+
+.list-item-menu-panel a {
+  list-style: none;
+  text-align: right;
+  padding: 0px;
+  display: block !important;
+  gap: 5px;
+  color: #9e9e9e;
+}
+
+
+
+/* تنسيقات القائمة الجانبية للموبايل */
+.sidenav-container {
+  width: 100%;
+  height: auto;
+}
+
+.mobile-sidenav {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidenav-mobile-bar {
+  padding: 40px 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.mat-raised-button {
+  background-color: none;
+  box-shadow: 0px 0px 0px !important;
+}
+
+.mat-menu-item {
+  text-align: right;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* نهاية قسم تنسيق القائمة الجانبية في الموبايل */
+
+
+
+
+
+/* ****************** Respnsive*************** */
+/*  أجهزة الموبايل الصغيرة: حتى 480px */
+@media screen and (max-width: 480px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+  }
+
+  .logo-section {
+    margin-right: auto;
+  }
+
+  .navbar {
+    flex-direction: row-reverse;
+  }
+
+  .card-content-menu {
+    width: 100%;
+  }
+}
+
+/*  موبايلات متوسطة وتابلت عمودي: 481–767px */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+  }
+
+  .logo-section {
+    margin-right: auto;
+  }
+
+  .navbar {
+    flex-direction: row-reverse;
+  }
+
+  .card-content-menu {
+    width: 100%;
+  }
+}
+
+/*  تابلت أفقي : 768–1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+  }
+
+  .logo-section {
+    width: 144px;
+    height: 26px;
+    margin-right: auto;
+  }
+
+  .logo-section img {
+    width: 144px;
+    height: 26px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    flex-direction: row-reverse;
+  }
+
+  .card-content-menu {
+    width: 45%;
+  }
+}
+
+/*  شاشات كبيرة (لابتوب): من 1024px وفوق */
+@media screen and (min-width: 1024px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: flex !important;
+  }
+
+  .card-content-menu {
+    width: 180px;
+  }
+}

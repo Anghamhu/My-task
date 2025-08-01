@@ -1,0 +1,69 @@
+<!--  التابات سلايدر للموبايل -->
+<div class="category-slider">
+  <button class="arrow-btn" (click)="scrollSlider('left')">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div class="slider-track" #sliderTrack>
+    <button *ngFor="let category of categories"
+            (click)="filterByCategory(category)"
+            [class.active]="selectedCategory === category.code"
+            class="category-tab">
+        {{ category.titleInArabic }}
+    </button>
+  </div>
+
+  <button class="arrow-btn" (click)="scrollSlider('right')">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
+
+
+
+
+
+
+<!-- التصنيفات -->
+<div class="category-buttons">
+  <button
+    *ngFor="let category of categories"
+    (click)="filterByCategory(category)"
+    [class.active]="selectedCategory === category.code">
+    {{ category.titleInArabic }}
+  </button>
+</div>
+
+<!-- جديد او مميز -->
+<div class="tabs">
+  <button [class.active]="selectedTab === 'new'" (click)="selectTab('new')">الجديد</button>
+  <button [class.active]="selectedTab === 'featured'" (click)="selectTab('featured')">مميزة</button>
+</div>
+
+<!-- الكاردات -->
+<div class="card-grid">
+  <div *ngIf="loading" class="loading-spinner">
+    جاري التحميل...
+  </div>
+  <ng-container *ngIf="!loading && filteredCards.length > 0">
+
+    <mat-card class="template-card" *ngFor="let card of filteredCards">
+      <div class="image-container">
+      <img mat-card-image [src]="card.image" alt="صورة القالب" class="card-image"/>
+      <div class="image-overlay">
+        <span *ngIf="card.paid" class="paid-badge">مدفوع <mat-icon>paid</mat-icon></span>
+        <button mat-stroked-button class="overlay-btn"><mat-icon>share</mat-icon></button> 
+      </div>
+      </div>
+      <mat-card-content class="avatar-title">
+        <p class="card-title">{{ card.title }}</p>
+        <img class="img-avatar" [src]="card.logo" alt="صورة المصمم" />
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <div *ngIf="!loading && filteredCards.length === 0" class="no-results">
+    لا توجد قوالب لعرضها
+  </div>
+
+</div>
+

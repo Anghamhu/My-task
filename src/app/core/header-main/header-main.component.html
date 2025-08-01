@@ -1,0 +1,145 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-toolbar color="transparent" class="navbar">
+    <!-- زر القائمة للموبايل -->
+    <button mat-icon-button class="mobile-menu-btn" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- شريط التنقل يتم عرضه على شاشة كبيرة فقط -->
+    <span class="toolbar-actions desktop-only">
+      <button mat-button [matMenuTriggerFor]="langMenu" class="lang">
+        <mat-icon>arrow_drop_down</mat-icon> AR <mat-icon>language</mat-icon>
+      </button>
+      <mat-menu #langMenu="matMenu">
+        <button mat-menu-item (click)="changeLanguage('ar')">(Ar) العربية</button>
+        <button mat-menu-item (click)="changeLanguage('en')">(Us) English</button>
+      </mat-menu>
+      <button mat-raised-button class="login-button" routerLink="/" >تسجيل الدخول</button>
+    </span>
+    <!-- navbar في المنتصف يتم عرضه على الشاشة الكبيرة فقط -->
+    <span class="nav-links desktop-only">
+      <a mat-button routerLink="landing-page">ابدأ دخلك الثاني</a>
+      <a mat-button routerLink="plans">الاشتراك</a>
+      <a mat-button [matMenuTriggerFor]="templatesMenu"> <mat-icon> expand_more</mat-icon>القوالب</a>
+      <mat-menu #templatesMenu="matMenu" class="custom-menu-panel" [overlapTrigger]="false">
+        <div class="content-mat-menu-panel">
+          <div class="item-menu-panel">
+            <img src="../../../assets/images/social-media-ar.jpg">
+            <h4 class="title-mat-menu-panel">تواصل اجتماعي</h4>
+            <ul class="list-item-menu-panel">
+              <a mat-button routerLink="/">
+                <li>فيسبوك</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>انستغرام</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>تويتر</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>ستوري</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>لينكد ان</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="item-menu-panel">
+            <img src="../../assets/images/social-media-ar.jpg">
+            <h4 class="title-mat-menu-panel">تواصل اجتماعي</h4>
+            <ul class="list-item-menu-panel">
+              <a mat-button routerLink="/">
+                <li>فيسبوك</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>انستغرام</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>تويتر</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>ستوري</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>لينكد ان</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="item-menu-panel">
+            <img src="../../assets/images/social-media-ar.jpg">
+            <h4 class="title-mat-menu-panel">تواصل اجتماعي</h4>
+            <ul class="list-item-menu-panel">
+              <a mat-button routerLink="/">
+                <li>فيسبوك</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>انستغرام</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>تويتر</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>ستوري</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>لينكد ان</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="item-menu-panel">
+            <img src="../../assets/images/social-media-ar.jpg">
+            <h4 class="title-mat-menu-panel">تواصل اجتماعي</h4>
+            <ul class="list-item-menu-panel">
+              <a mat-button routerLink="/">
+                <li>فيسبوك</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>انستغرام</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>تويتر</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>ستوري</li>
+              </a>
+              <a mat-button routerLink="/">
+                <li>لينكد ان</li>
+              </a>
+            </ul>
+          </div>
+
+        </div>
+      </mat-menu>
+      <a mat-button routerLink="/" class="active">الرئيسية</a>
+
+    </span>
+
+
+    <span class="logo-section">
+      <a routerLink="/"> <img src="../../assets/images/namoothaj-logo-ar.svg" alt="نموذج" class="logo" /></a>
+    </span>
+  </mat-toolbar>
+
+
+
+  <!-- القائمة الجانبية (تظهر عند الشاشات الصغيرة) -->
+  <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
+    <div class="sidenav-mobile-bar">
+      <button mat-raised-button color="primary">تسجيل الدخول</button>
+      <button mat-raised-button (click)="sidenav.toggle()"> <mat-icon>close</mat-icon></button>
+    </div>
+    <button mat-menu-item>الرئيسية</button>
+    <button mat-menu-item>
+      <mat-icon>expand_more</mat-icon>القوالب</button>
+    <div class="content-mat-menu-mobile">
+      <!--محتوى قائمة القوالب في الموبايل -->
+    </div>
+    <button mat-menu-item>الاشتراك</button>
+    <button mat-menu-item>ابدأ دخلك الثاني</button>
+  </mat-sidenav>
+
+</mat-sidenav-container>
